@@ -9,6 +9,6 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nazwa', 'kategoria', 'dlugosc_rolki', 'wysokosc_rolki', 'srednica_rolki', 'srednica_tulejki', 'ilosc_warstw', 'material', 'perforacja', 'paletyzacja', 'pakowanie', 'gramatura', 'zdjecie', 'cena'];
+    protected $fillable = ['marka', 'nazwa', 'kategoria', 'cena', 'opis', 'plec', 'kolor', 'rozmiar_ramy', 'material_ramy', 'widelec', 'naped', 'przerzutka_przednia', 'przerzutka_tylna', 'manetki', 'mechanizm_korbowy', 'kaseta', 'typ_hamulcow', 'rozmiar_kola', 'opony', 'siodlo', 'pedaly', 'kod_produktu', 'rocznik'];
 
 }

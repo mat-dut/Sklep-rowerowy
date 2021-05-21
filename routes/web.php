@@ -17,16 +17,12 @@ use App\Http\Middleware\VerifyIfAdmin;
 |
 */
 
-Route::get('/', [ElementController::class, 'index'])->name('main');
-
 Auth::routes();
 
 
 
-// ADMIN FUNCTIONS
+// FUNKCJE ADMINISTRATORA
 Route::get('admin', [AdminController::class, 'index'])->middleware(VerifyIfAdmin::class)->name('admin');
-
-Route::get('elements_table', [AdminController::class, 'elements_table'])->middleware(VerifyIfAdmin::class)->name('elements_table');
 
 Route::get('edit_form/{element_id}', [AdminController::class, 'edit'])->middleware(VerifyIfAdmin::class)->name('edit');
 Route::post('update_element', [AdminController::class, 'update'])->middleware(VerifyIfAdmin::class)->name('update_element');
@@ -39,18 +35,14 @@ Route::get('edit_product/{product_id}', [ProductController::class, 'edit'])->mid
 Route::post('update_product', [ProductController::class, 'update'])->middleware(VerifyIfAdmin::class)->name('update_product');
 Route::get('remove_product/{product_id}', [ProductController::class, 'remove'])->middleware(VerifyIfAdmin::class)->name('remove_product');
 
-// END OF ADMIN FUNCTIONS
+// KONIEC FUNKCJI ADMINISTRATORA
 
-Route::get('products', [ProductController::class, 'index'])->name('products');
-Route::post('products', [ProductController::class, 'index'])->name('products');
+Route::get('/', [ProductController::class, 'index'])->name('main');
+Route::post('/', [ProductController::class, 'index'])->name('main');
 Route::get('product/{product_id}', [ProductController::class, 'show'])->name('product');
-Route::get('products/{category}', [ProductController::class, 'index']);
+Route::get('/{category}', [ProductController::class, 'index']);
 
 //Pinging
 Route::get('/ping', function(){
     return response('OK', 200);
-});
-
-Route::get('/test/{test}', function($test){
-    return $test;
 });

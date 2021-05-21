@@ -8,14 +8,14 @@
                     <form method="post" action="create_product" enctype="multipart/form-data">
                         @csrf
                         <div class="form-floating mb-3">
+                            <input type="text" name="marka" class="form-control" id="input1" placeholder="Marka">
+                            <label for="input1">Marka</label>
+                        </div>
+                        <form>
+                        <div class="form-floating mb-3">
                             <input type="text" name="nazwa" class="form-control" id="input1" placeholder="Nazwa">
                             <label for="input1">Nazwa</label>
                         </div>
-                        {{-- <div class="form-floating mb-3">
-                            <input type="text" name="kategoria" class="form-control" id="input1" placeholder="Kategoria">
-                            <label for="input1">Kategoria</label>
-                        </div> --}}
-                        <form>
                         <select class="form-select mb-3" name="kategoria" aria-label="Kategoria">
                             <option selected>--Kategoria--</option>
                             <option value="Ręczniki w roli">Ręczniki w roli</option>
@@ -26,49 +26,85 @@
                             <option value="Serwetki papierowe">Serwetki papierowe</option>
                             <option value="Chusteczki higieniczne">Chusteczki higieniczne</option>
                           </select>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="dlugosc_rolki" class="form-control" id="input1" placeholder="Długość rolki">
-                            <label for="input1">Długość rolki</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="wysokosc_rolki" class="form-control" id="input1" placeholder="Wysokość rolki">
-                            <label for="input1">Wysokość rolki</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="srednica_rolki" class="form-control" id="input1" placeholder="Średnica rolki">
-                            <label for="input1">Średnica rolki</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="srednica_tulejki" class="form-control" id="input1" placeholder="Średnica tulejki">
-                            <label for="input1">Średnica tulejki</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="ilosc_warstw" class="form-control" id="input1" placeholder="Ilość warstw">
-                            <label for="input1">Ilość warstw</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="material" class="form-control" id="input1" placeholder="Materiał">
-                            <label for="input1">Materiał</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="perforacja" class="form-control" id="input1" placeholder="Perforacja">
-                            <label for="input1">Perforacja</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="paletyzacja" class="form-control" id="input1" placeholder="Paletyzacja">
-                            <label for="input1">Paletyzacja</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="pakowanie" class="form-control" id="input1" placeholder="Pakowanie">
-                            <label for="input1">Pakowanie</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="gramatura" class="form-control" id="input1" placeholder="Gramatura">
-                            <label for="input1">Gramatura</label>
-                        </div>
-                        <div class="form-floating mb-3">
+                          <div class="form-floating mb-3">
                             <input type="text" name="cena" class="form-control" id="input1" placeholder="Cena">
                             <label for="input1">Cena</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" name="opis" class="form-control" id="input1" placeholder="Opis"></textarea>
+                            <label for="input1">Opis</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="plec" class="form-control" id="input1" placeholder="Płeć">
+                            <label for="input1">Płeć</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="kolor" class="form-control" id="input1" placeholder="Kolor">
+                            <label for="input1">Kolor</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="rozmiar_ramy" class="form-control" id="input1" placeholder="Rozmiar ramy">
+                            <label for="input1">Rozmiar ramy</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="material_ramy" class="form-control" id="input1" placeholder="Materiał ramy">
+                            <label for="input1">Materiał ramy</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="widelec" class="form-control" id="input1" placeholder="Widelec">
+                            <label for="input1">Widelec</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="naped" class="form-control" id="input1" placeholder="Napęd">
+                            <label for="input1">Napęd</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="przerzutka_przednia" class="form-control" id="input1" placeholder="Przerzutka przednia">
+                            <label for="input1">Przerzutka przednia</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="przerzutka_tylna" class="form-control" id="input1" placeholder="Przerzutka tylna">
+                            <label for="input1">Przerzutka tylna</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="manetki" class="form-control" id="input1" placeholder="Manetki">
+                            <label for="input1">Manetki</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="mechanizm_korbowy" class="form-control" id="input1" placeholder="Mechanizm korbowy">
+                            <label for="input1">Mechanizm korbowy</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="kaseta" class="form-control" id="input1" placeholder="Kaseta">
+                            <label for="input1">Kaseta</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="typ_hamulcow" class="form-control" id="input1" placeholder="Typ hamulców">
+                            <label for="input1">Typ hamulców</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="rozmiar_kola" class="form-control" id="input1" placeholder="Rozmiar koła">
+                            <label for="input1">Rozmiar koła</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="opony" class="form-control" id="input1" placeholder="Opony">
+                            <label for="input1">Opony</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="siodlo" class="form-control" id="input1" placeholder="Siodło">
+                            <label for="input1">Siodło</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="pedaly" class="form-control" id="input1" placeholder="Pedały">
+                            <label for="input1">Pedały</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="kod_produktu" class="form-control" id="input1" placeholder="Kod produktu">
+                            <label for="input1">Kod produktu</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="rocznik" class="form-control" id="input1" placeholder="Rocznik">
+                            <label for="input1">Rocznik</label>
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Wybierz zdjęcie</label>

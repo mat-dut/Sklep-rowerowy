@@ -17,21 +17,6 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-            <div class="row mt-2">
-                <div class="col-2"></div>
-                <div class="col-8">
-                    <div class="card text-center">
-                        <h5 class="card-header bg-info">Elementy strony</h5>
-                        <div class="card-body">
-                            <h5 class="card-title">Szybka edycja</h5>
-                            <a href="{{ route('main') }}" class="btn btn-primary">Edytuj</a>
-                            <h5 class="card-title mt-4">Wyświetl wszystkie elementy</h5>
-                            <a href="{{ route('elements_table') }}" class="btn btn-primary">Wyświetl</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2"></div>
-            </div>
         </div>
     </section>
 </main>

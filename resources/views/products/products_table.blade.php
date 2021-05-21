@@ -1,7 +1,7 @@
 @extends('layouts.app')
-<main class="py-4" id="main">
+<main class="py-4 mb-5" id="main">
     <section class="inner-page" style="overflow: auto;">
-        <div class="container m-0"></div>
+        <div class="container"></div>
             <div class="row">
                 <div class="col-1 col-md-1"></div>
                     <div class="col-10 col-md-5">
@@ -43,20 +43,30 @@
                                 <tr>
                                     {{-- <th scope="row">{{ $loop->index }}</th> --}}
                                     <td>{{ $product->id }}</td>
+                                    <td>{{ $product->marka }}</td>
                                     <td>{{ $product->nazwa }}</td>
-                                    <td>{{ $product->kategoria }}</td>
-                                    <td>{{ $product->dlugosc_rolki }}</td> 
-                                    <td>{{ $product->wysokosc_rolki }}</td>
-                                    <td>{{ $product->srednica_rolki }}</td>
-                                    <td>{{ $product->srednica_tulejki }}</td>
-                                    <td>{{ $product->ilosc_warstw }}</td>
-                                    <td>{{ $product->material }}</td>
-                                    <td>{{ $product->perforacja }}</td>
-                                    <td>{{ $product->paletyzacja }}</td>
-                                    <td>{{ $product->pakowanie }}</td>
-                                    <td>{{ $product->gramatura }}</td>
-                                    <td><a href="{{ Storage::disk('google')->url($product->zdjecie) }}">Zobacz</a></td>
+                                    <td>{{ $product->kategoria }}</td> 
                                     <td>{{ $product->cena }}</td>
+                                    <td>{{ $product->opis }}</td>
+                                    <td>{{ $product->plec }}</td>
+                                    <td>{{ $product->kolor }}</td>
+                                    <td>{{ $product->rozmiar_ramy }}</td>
+                                    <td>{{ $product->material_ramy }}</td>
+                                    <td>{{ $product->widelec }}</td>
+                                    <td>{{ $product->naped }}</td>
+                                    <td>{{ $product->przerzutka_przednia }}</td>
+                                    <td>{{ $product->przerzutka_tylna }}</td>
+                                    <td>{{ $product->manetki }}</td>
+                                    <td>{{ $product->mechanizm_korbowy }}</td>
+                                    <td>{{ $product->kaseta }}</td>
+                                    <td>{{ $product->typ_hamulcow }}</td>
+                                    <td>{{ $product->rozmiar_kola }}</td>
+                                    <td>{{ $product->opony }}</td>
+                                    <td>{{ $product->siodlo }}</td>
+                                    <td>{{ $product->pedaly }}</td>
+                                    <td>{{ $product->kod_produktu }}</td>
+                                    <td>{{ $product->rocznik }}</td>
+                                    <td><a href="{{ Storage::disk('google')->url($product->zdjecie) }}">Zobacz</a></td>
                                     <td>{{ $product->created_at }}</td>
                                     <td>{{ $product->updated_at }}</td>
                                     <td>

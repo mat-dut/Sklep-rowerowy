@@ -15,20 +15,30 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('marka')->nullable(true);
             $table->string('nazwa')->nullable(true);
             $table->string('kategoria')->nullable(true);
-            $table->string('dlugosc_rolki')->nullable(true);
-            $table->string('wysokosc_rolki')->nullable(true);
-            $table->string('srednica_rolki')->nullable(true);
-            $table->string('srednica_tulejki')->nullable(true);
-            $table->string('ilosc_warstw')->nullable(true);
-            $table->string('material')->nullable(true);
-            $table->string('perforacja')->nullable(true);
-            $table->string('paletyzacja')->nullable(true);
-            $table->string('pakowanie')->nullable(true);
-            $table->string('gramatura')->nullable(true);
-            $table->string('zdjecie')->nullable(true);
             $table->string('cena')->nullable(true);
+            $table->string('opis')->nullable(true);
+            $table->string('plec')->nullable(true);
+            $table->string('kolor')->nullable(true);
+            $table->string('rozmiar_ramy')->nullable(true);
+            $table->string('material_ramy')->nullable(true);
+            $table->string('widelec')->nullable(true);
+            $table->string('naped')->nullable(true);
+            $table->string('przerzutka_przednia')->nullable(true);
+            $table->string('przerzutka_tylna')->nullable(true);
+            $table->string('manetki')->nullable(true);
+            $table->string('mechanizm_korbowy')->nullable(true);
+            $table->string('kaseta')->nullable(true);
+            $table->string('typ_hamulcow')->nullable(true);
+            $table->string('rozmiar_kola')->nullable(true);
+            $table->string('opony')->nullable(true);
+            $table->string('siodlo')->nullable(true);
+            $table->string('pedaly')->nullable(true);
+            $table->string('kod_produktu')->nullable(true);
+            $table->string('rocznik')->nullable(true);
+            $table->string('zdjecie')->nullable(true);
             $table->timestamps();
         });
     }

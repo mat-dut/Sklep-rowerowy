@@ -37,15 +37,15 @@
         <header id="header" class="fixed-top">
             <div class="container d-flex align-items-center justify-content-between">
         
-              <h1 class="logo"><a href="{{ route("main") }}">OnePage</a></h1>
+              <h1 class="logo"><a href="{{ route("main") }}">{{ config('app.name', 'Laravel') }}</a></h1>
               <!-- Uncomment below if you prefer to use an image logo -->
               <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><a class="nav-link scrollto active" href="{{ route("main") }}">Strona główna</a></li>
-                  <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                  <li><a class="nav-link scrollto" href="#contact">Kontakt</a></li>
+                  <li><a class="nav-link active" href="{{ route("main") }}">Strona główna</a></li>
+                  <li><a class="nav-link" href="{{ route('contact') }}">Kontakt</a></li>
+                  <li><a class="nav-link" href="{{ route('about') }}">O nas</a></li>
                   @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -82,6 +82,7 @@
                                 </div>
                             </li>
                         @endguest
+                        <li class="justify-content-end"><a class="nav-link" href="{{ asset('cart') }}"><img class="img-fluid" height="48" width="48" src="{{ asset('assets/img/cart_img.png') }}">Koszyk<h5><span class="badge bg-success ml-1">@if (session('cart') !== null) {{ count(session('cart')) }} @else 0 @endif</span></h5></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
               </nav><!-- .navbar -->

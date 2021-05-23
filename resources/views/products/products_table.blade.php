@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<main class="py-4 mb-5" id="main">
+<main class="py-4 mt-3 mb-5" id="main">
     <section class="inner-page" style="overflow: auto;">
         <div class="container"></div>
             <div class="row">
@@ -13,13 +13,13 @@
                                     @if(session('category') !== null)
                                     <option selected value="{{ session('category') }}">{{ session('category') }}</option>
                                     @endif
-                                    <option value="Ręczniki w roli">Ręczniki w roli</option>
-                                    <option value="Ręczniki składane">Ręczniki składane</option>
-                                    <option value="Papier toaletowy">Papier toaletowy</option>
-                                    <option value="Prześcieradła">Prześcieradła</option>
-                                    <option value="Czyściwa papierowe">Czyściwa papierowe</option>
-                                    <option value="Serwetki papierowe">Serwetki papierowe</option>
-                                    <option value="Chusteczki higieniczne">Chusteczki higieniczne</option>
+                                    <option value="Rowery krossowe">Rowery krossowe</option>
+                                    <option value="Rowery BMX">Rowery BMX</option>
+                                    <option value="Rowery elektryczne">Rowery elektryczne</option>
+                                    <option value="Rowery górskie MTB">Rowery górskie MTB</option>
+                                    <option value="Gravele i przełajowe">Gravele i przełajowe</option>
+                                    <option value="Rowery miejskie">Rowery miejskie</option>
+                                    <option value="Rowery szosowe">Rowery szosowe</option>
                                 </select>
                                 <button class="btn btn-success align-self-start ml-3" type="submit">Wyświetl</button>
                             </div>
@@ -28,8 +28,8 @@
                     <div class="col-1 col-md-6"></div>
             </div>
             <div class="row">
-                <div class="col-12">
-                    <table id="Table_id" class="table table-lg table-bordered">
+                <div class="col">
+                    <table class="table table-lg table-bordered">
                         <thead class="thead-dark">
                         <tr>
                             @foreach ($columns as $column)
@@ -44,12 +44,12 @@
                                     {{-- <th scope="row">{{ $loop->index }}</th> --}}
                                     <td>{{ $product->id }}</td>
                                     <td>{{ $product->marka }}</td>
-                                    <td>{{ $product->nazwa }}</td>
+                                    <td class="text-nowrap"><a href="{{ asset("product/$product->id") }}">{{ $product->nazwa }}</a></td>
                                     <td>{{ $product->kategoria }}</td> 
-                                    <td>{{ $product->cena }}</td>
+                                    <td class="text-nowrap">{{ number_format($product->cena, 0, '.', ' ') }} zł</td>
                                     <td>{{ $product->opis }}</td>
                                     <td>{{ $product->plec }}</td>
-                                    <td>{{ $product->kolor }}</td>
+                                    <td class="text-nowrap">{{ $product->kolor }}</td>
                                     <td>{{ $product->rozmiar_ramy }}</td>
                                     <td>{{ $product->material_ramy }}</td>
                                     <td>{{ $product->widelec }}</td>
@@ -60,10 +60,12 @@
                                     <td>{{ $product->mechanizm_korbowy }}</td>
                                     <td>{{ $product->kaseta }}</td>
                                     <td>{{ $product->typ_hamulcow }}</td>
+                                    <td>{{ $product->hamulce }}</td>
                                     <td>{{ $product->rozmiar_kola }}</td>
                                     <td>{{ $product->opony }}</td>
                                     <td>{{ $product->siodlo }}</td>
                                     <td>{{ $product->pedaly }}</td>
+                                    <td>{{ $product->waga }}</td>
                                     <td>{{ $product->kod_produktu }}</td>
                                     <td>{{ $product->rocznik }}</td>
                                     <td><a href="{{ Storage::disk('google')->url($product->zdjecie) }}">Zobacz</a></td>

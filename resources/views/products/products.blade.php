@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-lg-5">
-                    <form method="post" action="../products">
+                    <form method="post">
                         @csrf
                         <div class="d-flex">
                             <select class="form-select mb-3" name="kategoria" aria-label="Kategoria">
@@ -12,13 +12,13 @@
                                 @if(session('category') !== null)
                                 <option selected value="{{ session('category') }}">{{ session('category') }}</option>
                                 @endif
-                                <option value="Ręczniki w roli">Ręczniki w roli</option>
-                                <option value="Ręczniki składane">Ręczniki składane</option>
-                                <option value="Papier toaletowy">Papier toaletowy</option>
-                                <option value="Prześcieradła">Prześcieradła</option>
-                                <option value="Czyściwa papierowe">Czyściwa papierowe</option>
-                                <option value="Serwetki papierowe">Serwetki papierowe</option>
-                                <option value="Chusteczki higieniczne">Chusteczki higieniczne</option>
+                                <option value="Rowery krossowe">Rowery krossowe</option>
+                                <option value="Rowery BMX">Rowery BMX</option>
+                                <option value="Rowery elektryczne">Rowery elektryczne</option>
+                                <option value="Rowery górskie MTB">Rowery górskie MTB</option>
+                                <option value="Gravele i przełajowe">Gravele i przełajowe</option>
+                                <option value="Rowery miejskie">Rowery miejskie</option>
+                                <option value="Rowery szosowe">Rowery szosowe</option>
                             </select>
                             <button class="btn btn-success align-self-start ml-3" type="submit">Wyświetl</button>
                         </div>
@@ -34,7 +34,7 @@
                             <div class="card-body">
                                 <h6 class="text-muted">{{ $product->kategoria }}</h6>
                                 <h4 class="card-title">{{ $product->nazwa }}</h4>
-                                <h5 class="text-success mb-3">{{ $product->cena }}</h5>
+                                <h5 class="text-success mb-3">{{ number_format($product->cena, 0, '.', ' ') }} zł</h5>
                                 <p class="card-text"><a href="{{ route('product', $product->id) }}"><button class="btn btn-info">Przejdź</button></a></p>
                             </div>
                         </div>

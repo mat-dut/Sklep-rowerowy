@@ -13,13 +13,10 @@ class ProductController extends Controller
     public function index(Request $request, $category=''){
         if ($request->method() == 'GET'){
             if(session('category') !== null){
-                $products = Product::where('kategoria', session('category'))->get();
-            }else if($category !== ''){
-                session(['category' => $request->kategoria]);
-                $products = Product::where('kategoria', $category)->get();
+                $products = Product::where('kategoria', session('category'))->orderBy('id', 'asc')->get();
             }
             else{
-                $products = Product::all();
+                $products = Product::select('*')->orderBy('id', 'asc')->get();
             }
             return view('products.products', [
                 'products' => $products
@@ -28,12 +25,12 @@ class ProductController extends Controller
         }elseif($request->method() == 'POST'){
             if($request->kategoria == 'Wszystkie'){
                 session()->forget('category');
-                return redirect('products');
+                return redirect('/');
             }
             else{
                 session(['category' => $request->kategoria]);
 
-                $products = Product::where('kategoria', $request->kategoria)->get();
+                $products = Product::where('kategoria', $request->kategoria)->orderBy('id', 'asc')->get();
 
                 return view('products.products', [
                     'products' => $products
@@ -71,9 +68,9 @@ class ProductController extends Controller
 
         if ($request->method() == 'GET'){
             if(session('category') !== null){
-                $products = Product::where('kategoria', session('category'))->get();
+                $products = Product::where('kategoria', session('category'))->orderBy('id', 'asc')->get();
             }else{
-                $products = Product::all();
+                $products = Product::select('*')->orderBy('id', 'asc')->get();
             }
             $columns = Schema::getColumnListing('products');
             return view('products.products_table', [
@@ -89,7 +86,7 @@ class ProductController extends Controller
             else{
                 session(['category' => $request->kategoria]);
 
-                $products = Product::where('kategoria', $request->kategoria)->get();
+                $products = Product::where('kategoria', $request->kategoria)->orderBy('id', 'asc')->get();
                 $columns = Schema::getColumnListing('products');
 
                 return view('products.products_table', [

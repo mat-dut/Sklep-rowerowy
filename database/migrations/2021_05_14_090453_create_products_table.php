@@ -32,10 +32,12 @@ class CreateProductsTable extends Migration
             $table->string('mechanizm_korbowy')->nullable(true);
             $table->string('kaseta')->nullable(true);
             $table->string('typ_hamulcow')->nullable(true);
+            $table->string('hamulce')->nullable(true);
             $table->string('rozmiar_kola')->nullable(true);
             $table->string('opony')->nullable(true);
             $table->string('siodlo')->nullable(true);
             $table->string('pedaly')->nullable(true);
+            $table->string('waga')->nullable(true);
             $table->string('kod_produktu')->nullable(true);
             $table->string('rocznik')->nullable(true);
             $table->string('zdjecie')->nullable(true);

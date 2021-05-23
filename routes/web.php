@@ -3,6 +3,8 @@
 use App\Http\Controllers\ElementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\VerifyIfAdmin;
 
@@ -23,10 +25,6 @@ Auth::routes();
 
 // FUNKCJE ADMINISTRATORA
 Route::get('admin', [AdminController::class, 'index'])->middleware(VerifyIfAdmin::class)->name('admin');
-
-Route::get('edit_form/{element_id}', [AdminController::class, 'edit'])->middleware(VerifyIfAdmin::class)->name('edit');
-Route::post('update_element', [AdminController::class, 'update'])->middleware(VerifyIfAdmin::class)->name('update_element');
-
 Route::get('create_product', [ProductController::class, 'create_product'])->middleware(VerifyIfAdmin::class)->name('create_product');
 Route::get('products_table', [ProductController::class, 'products_table'])->middleware(VerifyIfAdmin::class)->name('products_table');
 Route::post('products_table', [ProductController::class, 'products_table'])->middleware(VerifyIfAdmin::class);
@@ -38,11 +36,25 @@ Route::get('remove_product/{product_id}', [ProductController::class, 'remove'])-
 // KONIEC FUNKCJI ADMINISTRATORA
 
 Route::get('/', [ProductController::class, 'index'])->name('main');
-Route::post('/', [ProductController::class, 'index'])->name('main');
+Route::post('/', [ProductController::class, 'index']);
 Route::get('product/{product_id}', [ProductController::class, 'show'])->name('product');
-Route::get('/{category}', [ProductController::class, 'index']);
+
+//NAVBAR
+Route::get('/onas', [NavbarController::class, 'about'])->name('about');
+Route::get('/kontakt', [NavbarController::class, 'contact'])->name('contact');
+
+//FUNKCJE KOSZYKA
+Route::get('add_to_cart/{product_id}', [CartController::class, 'add'])->name('add_to_cart');
+Route::get('cart', [CartController::class, 'index'])->name('cart');
+Route::get('destroy', [CartController::class, 'destroy']);
+Route::get('remove_from_cart/{product_id}', [CartController::class, 'remove']);
+//KONIEC FUNKCJI KOSZYKA
 
 //Pinging
 Route::get('/ping', function(){
     return response('OK', 200);
+});
+
+Route::get('/test', function(){
+    return session('cart');
 });

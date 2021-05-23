@@ -18,18 +18,19 @@
                             <label for="input1">Nazwa</label>
                         </div>
                         <select class="form-select mb-3" name="kategoria" aria-label="Kategoria">
-                            <option selected>--Kategoria--</option>
-                            <option value="Ręczniki w roli">Ręczniki w roli</option>
-                            <option value="Ręczniki składane">Ręczniki składane</option>
-                            <option value="Papier toaletowy">Papier toaletowy</option>
-                            <option value="Prześcieradła">Prześcieradła</option>
-                            <option value="Czyściwa papierowe">Czyściwa papierowe</option>
-                            <option value="Serwetki papierowe">Serwetki papierowe</option>
-                            <option value="Chusteczki higieniczne">Chusteczki higieniczne</option>
+                            <option selected>{{$product->kategoria}}</option>
+                            <option value="--Kategoria--">--Kategoria--</option>
+                            <option value="Rowery krossowe">Rowery krossowe</option>
+                            <option value="Rowery BMX">Rowery BMX</option>
+                            <option value="Rowery elektryczne">Rowery elektryczne</option>
+                            <option value="Rowery górskie MTB">Rowery górskie MTB</option>
+                            <option value="Gravele i przełajowe">Gravele i przełajowe</option>
+                            <option value="Rowery miejskie">Rowery miejskie</option>
+                            <option value="Rowery szosowe">Rowery szosowe</option>
                         </select>
                         <div class="form-floating mb-3">
                             <input type="text" name="cena" class="form-control" id="input1" placeholder="Cena" value="{{ $product->cena }}">
-                            <label for="input1">Cena</label>
+                            <label for="input1">Cena (zł)</label>
                         </div>
                         <div class="form-floating mb-3">
                             <textarea type="text" name="opis" class="form-control" id="input1" placeholder="Opis">{{ $product->opis }}</textarea>
@@ -84,6 +85,10 @@
                             <label for="input1">Typ hamulców</label>
                         </div>
                         <div class="form-floating mb-3">
+                            <input type="text" name="hamulce" class="form-control" id="input1" placeholder="Hamulce" value="{{ $product->hamulce }}">
+                            <label for="input1">Hamulce</label>
+                        </div>
+                        <div class="form-floating mb-3">
                             <input type="text" name="rozmiar_kola" class="form-control" id="input1" placeholder="Rozmiar koła" value="{{ $product->rozmiar_kola }}">
                             <label for="input1">Rozmiar koła</label>
                         </div>
@@ -100,6 +105,10 @@
                             <label for="input1">Pedały</label>
                         </div>
                         <div class="form-floating mb-3">
+                            <input type="text" name="waga" class="form-control" id="input1" placeholder="Waga" value="{{ $product->waga }}">
+                            <label for="input1">Waga</label>
+                        </div>
+                        <div class="form-floating mb-3">
                             <input type="text" name="kod_produktu" class="form-control" id="input1" placeholder="Kod produktu" value="{{ $product->kod_produktu }}">
                             <label for="input1">Kod produktu</label>
                         </div>
@@ -108,12 +117,13 @@
                             <label for="input1">Rocznik</label>
                         </div>
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Wybierz zdjęcie</label>
+                            <label for="formFile" class="form-label">Wybierz zdjęcie (jeśli nie chcesz edytować, zostaw puste)</label>
                             <input class="form-control" type="file" name="image" id="formFile" accept=".jpg,.png,.jpeg">
                         </div>
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-info text-white w-50">Zapisz</button>
                         </div>
+                        <input type="hidden" name="id" value="{{ $product->id }}">
                     </form>
                 </div>
                 <div class="col-3"></div>

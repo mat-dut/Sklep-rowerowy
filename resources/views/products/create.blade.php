@@ -18,13 +18,13 @@
                         </div>
                         <select class="form-select mb-3" name="kategoria" aria-label="Kategoria">
                             <option selected>--Kategoria--</option>
-                            <option value="Ręczniki w roli">Ręczniki w roli</option>
-                            <option value="Ręczniki składane">Ręczniki składane</option>
-                            <option value="Papier toaletowy">Papier toaletowy</option>
-                            <option value="Prześcieradła">Prześcieradła</option>
-                            <option value="Czyściwa papierowe">Czyściwa papierowe</option>
-                            <option value="Serwetki papierowe">Serwetki papierowe</option>
-                            <option value="Chusteczki higieniczne">Chusteczki higieniczne</option>
+                            <option value="Rowery krossowe">Rowery krossowe</option>
+                            <option value="Rowery BMX">Rowery BMX</option>
+                            <option value="Rowery elektryczne">Rowery elektryczne</option>
+                            <option value="Rowery górskie MTB">Rowery górskie MTB</option>
+                            <option value="Gravele i przełajowe">Gravele i przełajowe</option>
+                            <option value="Rowery miejskie">Rowery miejskie</option>
+                            <option value="Rowery szosowe">Rowery szosowe</option>
                           </select>
                           <div class="form-floating mb-3">
                             <input type="text" name="cena" class="form-control" id="input1" placeholder="Cena">
@@ -83,6 +83,10 @@
                             <label for="input1">Typ hamulców</label>
                         </div>
                         <div class="form-floating mb-3">
+                            <input type="text" name="hamulce" class="form-control" id="input1" placeholder="hamulce">
+                            <label for="input1">Hamulce</label>
+                        </div>
+                        <div class="form-floating mb-3">
                             <input type="text" name="rozmiar_kola" class="form-control" id="input1" placeholder="Rozmiar koła">
                             <label for="input1">Rozmiar koła</label>
                         </div>
@@ -97,6 +101,10 @@
                         <div class="form-floating mb-3">
                             <input type="text" name="pedaly" class="form-control" id="input1" placeholder="Pedały">
                             <label for="input1">Pedały</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="waga" class="form-control" id="input1" placeholder="Waga">
+                            <label for="input1">Waga</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" name="kod_produktu" class="form-control" id="input1" placeholder="Kod produktu">

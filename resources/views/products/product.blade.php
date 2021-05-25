@@ -4,7 +4,7 @@
         <div class="container-fluid ml-lg-0">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8">
-                    <a href="{{ asset('/') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
+                    <a href="{{ secure_asset('/') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
                     <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" class="img-fluid rounded"  style="width: 100%; height: auto;" alt="{{ $product->nazwa }}">
               
                   </div>
@@ -23,7 +23,7 @@
                                     <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                 <?php endfor; ?>
                           </select>
-                          <button class="btn btn-primary btn-lg d-flex justify-content-center" id="button_add" data-bs-toggle="offcanvas" data-url="{{ asset("add_to_cart") }}" data-id="{{ $product->id }}" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Dodaj do koszyka</button>
+                          <button class="btn btn-primary btn-lg d-flex justify-content-center" id="button_add" data-bs-toggle="offcanvas" data-url="{{ secure_asset("add_to_cart") }}" data-id="{{ $product->id }}" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Dodaj do koszyka</button>
 
                             <div class="offcanvas offcanvas-end" style="width: 500px;" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                             <div class="offcanvas-header">
@@ -43,7 +43,7 @@
                                             </tbody>                                                                              
                                         </table>
                                     </div>
-                                    <div class="mt-3"><a href="{{ asset('cart') }}" class="card-link"><button class="btn btn-primary">Przejdź do koszyka</button></a></div>
+                                    <div class="mt-3"><a href="{{ secure_asset('cart') }}" class="card-link"><button class="btn btn-primary">Przejdź do koszyka</button></a></div>
                                     <div class="mt-3"><button class="btn btn-primary" data-bs-dismiss="offcanvas" aria-label="Close">Kontynuuj zakupy</button></div>
                                     
                             </div>
@@ -124,6 +124,6 @@
     </section>
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="{{ asset("js/cart.js") }}"></script>
+<script src="{{ secure_asset("js/cart.js") }}"></script>
 @section('content')
 @endsection

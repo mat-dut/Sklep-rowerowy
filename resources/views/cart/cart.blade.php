@@ -25,10 +25,10 @@
                             <tr>
                                 <th scope="row">{{ $loop->index+1 }}</th>
                                 <td><img class="img-fluid" height="64" width="64" src="{{ Storage::disk('google')->url($product->zdjecie) }}"></td>
-                                <td><a href="{{ asset("product/$product->id") }}">{{ $product->nazwa }}</a></td>
+                                <td><a href="{{ secure_asset("product/$product->id") }}">{{ $product->nazwa }}</a></td>
                                 <td class="text-nowrap"><span class="text-success">{{ number_format($product->cena, 0, '.', ' ') }} zł</span></td>
                                 <td>{{ $id[1] }}</td>
-                                <td><a href="{{ asset("remove_from_cart/$product->id") }}"><button class="btn btn-danger">Usuń</button></a></td>
+                                <td><a href="{{ secure_asset("remove_from_cart/$product->id") }}"><button class="btn btn-danger">Usuń</button></a></td>
                                 <?php $calosc += (float)$product->cena*$id[1] ?>
                             </tr>
                             @endif
@@ -37,10 +37,10 @@
                                 <td class="text-nowrap">Całość: <span class="text-success">{{ number_format($calosc, 0, '.', ' ') }} zł</span></td>
                         </tbody>
                     </table>
-                    <a class="card-text d-flex justify-content-start" href="{{ asset('make_order') }}"><button type="button" class="btn btn-info text-white">Zrealizuj zamówienie</button></a>
-                    <a class="card-text d-flex justify-content-end" href="{{ asset('clear_cart') }}"><button type="button" class="btn btn-danger">Wyczyść koszyk</button></a>
+                    <a class="card-text d-flex justify-content-start" href="{{ secure_asset('make_order') }}"><button type="button" class="btn btn-info text-white">Zrealizuj zamówienie</button></a>
+                    <a class="card-text d-flex justify-content-end" href="{{ secure_asset('clear_cart') }}"><button type="button" class="btn btn-danger">Wyczyść koszyk</button></a>
                     @else
-                        <h3 class="card-text">Brak produktów w koszyku! <a href="{{ asset('/') }}">Zamów coś tutaj.</a></h3>
+                        <h3 class="card-text">Brak produktów w koszyku! <a href="{{ secure_asset('/') }}">Zamów coś tutaj.</a></h3>
                     @endif
                 </div>
                 <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>

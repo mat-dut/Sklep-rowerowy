@@ -33,8 +33,8 @@
                             <label for="input1">Cena (zł)</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea type="text" style="height: 7rem; resize: none;" maxlength="200" name="opis" class="form-control" id="input1" placeholder="Opis">{{ $product->opis }}</textarea>
-                            <label for="input1">Opis (limit znaków: 200)</label>
+                            <textarea type="text" style="height: 7rem; resize: none;" maxlength="200" name="opis" class="form-control" id="opis" placeholder="Opis">{{ $product->opis }}</textarea>
+                            <label for="input1">Opis <span id="charNum"></span>/200</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" name="plec" class="form-control" id="input1" placeholder="Płeć" value="{{ $product->plec }}">
@@ -133,6 +133,7 @@
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-{{-- <script src="./js/admin_edit.js"></script> --}}
+<script src="{{ asset('js/admin_edit.js') }}"></script>
+{{-- <scrip src="./js/admin_edit.js"></scrip> --}}
 @section('content')
 @endsection

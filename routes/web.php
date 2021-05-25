@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Http\Middleware\VerifyIfAdmin;
 
 /*
@@ -44,17 +45,17 @@ Route::get('/onas', [NavbarController::class, 'about'])->name('about');
 Route::get('/kontakt', [NavbarController::class, 'contact'])->name('contact');
 
 //FUNKCJE KOSZYKA
-Route::get('add_to_cart/{product_id}', [CartController::class, 'add'])->name('add_to_cart');
+Route::post('add_to_cart', [CartController::class, 'add'])->name('add_to_cart');
 Route::get('cart', [CartController::class, 'index'])->name('cart');
-Route::get('destroy', [CartController::class, 'destroy']);
+Route::get('clear_cart', [CartController::class, 'destroy']);
 Route::get('remove_from_cart/{product_id}', [CartController::class, 'remove']);
 //KONIEC FUNKCJI KOSZYKA
+
+//FUNKCJE ZAMAWIANIA
+Route::get('make_order', [OrderController::class, 'index'])->name('make_order');
+//KONIEC FUNKCJI ZAMAWIANIA
 
 //Pinging
 Route::get('/ping', function(){
     return response('OK', 200);
-});
-
-Route::get('/test', function(){
-    return session('cart');
 });

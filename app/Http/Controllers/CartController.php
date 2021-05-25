@@ -15,22 +15,29 @@ class CartController extends Controller
         ]);
     }
 
-    public function add($product_id){
+    public function add(Request $request){
         if(session('cart') !== null){
             $temp_arr = session('cart');
-            $temp_arr[] = $product_id;
+            $temp_arr[] = [$request->id, $request->count];
             session(['cart'=>$temp_arr]);
         }elseif(session('cart')===null){
-            $temp_arr = [$product_id];
+            $temp_arr = [[$request->id, $request->count]];
             session(['cart'=>$temp_arr]);
         }
-        return redirect('cart');
+        return response()->json([
+            'cart' => session('cart')
+        ]);
     }
 
     public function remove($product_id){
         $cart = session('cart');
-        if (($key = array_search($product_id, $cart)) !== false) {
-            unset($cart[$key]);
+        $index = 0;
+        foreach($cart as $arr){
+            if (($key = array_search($product_id, $arr)) !== false) {
+                unset($cart[$index]);
+                $cart = array_values($cart);
+            }
+            $index+=1;
         }
         session(['cart' => $cart]);
         session()->save();
@@ -40,6 +47,6 @@ class CartController extends Controller
     public function destroy(){
         session()->forget('cart');
         session()->save();
-        dd(session('cart'));
+        return redirect('cart');
     }
 }

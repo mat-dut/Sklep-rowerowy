@@ -4,7 +4,7 @@
         <div class="container-fluid ml-lg-0">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8">
-                    <a href="{{ asset('products') }}"><button class="btn btn-info position-absolute ml-2 mt-2">Powrót</button></a>
+                    <a href="{{ asset('products') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
                     <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" class="img-fluid rounded"  style="width: 100%; height: auto;" alt="{{ $product->nazwa }}">
               
                   </div>
@@ -17,7 +17,37 @@
                           <p class="card-text"><b>Rozmiar koła: </b><span class="badge bg-primary">{{ $product->rozmiar_kola ?? '---'}}</span></p>
                           <p class="card-text"><b>Rozmiar ramy: </b><span class="badge bg-primary">{{ $product->rozmiar_ramy ?? '---'}}</span></p>
                           <h5 class="text-success">{{ number_format($product->cena, 0, '.', ' ') }} zł</h5>
-                          <a href="{{ asset("add_to_cart/$product->id") }}" class="card-link"><button class="btn btn-primary">Dodaj do koszyka</button></a>
+                          <p class="card-text  mt-3">Ilość: </p>
+                          <select class="form-select w-25 mb-3" id="number" name="hour">
+                                <?php for ($i = 1; $i <= 20; $i++) : ?>
+                                    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                <?php endfor; ?>
+                          </select>
+                          <button class="btn btn-primary btn-lg d-flex justify-content-center" id="button_add" data-bs-toggle="offcanvas" data-url="{{ asset("add_to_cart") }}" data-id="{{ $product->id }}" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Dodaj do koszyka</button>
+
+                            <div class="offcanvas offcanvas-end" style="width: 500px;" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasRightLabel">Produkt został dodany do koszyka</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                    <div>
+                                        <table class="table w-auto text-nowrap">
+                                            <tbody>
+                                                <tr>
+                                                    <td><img src="{{ Storage::disk('google')->url($product->zdjecie) }}" height="128" width="128" class="img-fluid rounded" alt="{{ $product->nazwa }}"></td>
+                                                    <td><p class="card-text">{{ $product->nazwa }}</p></td>
+                                                    <td><p class="text-success">{{ number_format($product->cena, 0, '.', ' ')}} zł</p></td>
+                                                    <td>Ilość: <span id="count"></span></td>
+                                                </tr>
+                                            </tbody>                                                                              
+                                        </table>
+                                    </div>
+                                    <div class="mt-3"><a href="{{ asset('cart') }}" class="card-link"><button class="btn btn-primary">Przejdź do koszyka</button></a></div>
+                                    <div class="mt-3"><button class="btn btn-primary" data-bs-dismiss="offcanvas" aria-label="Close">Kontynuuj zakupy</button></div>
+                                    
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,5 +123,7 @@
         </div>
     </section>
 </main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{{ asset("js/cart.js") }}"></script>
 @section('content')
 @endsection

@@ -33,8 +33,8 @@
                             <label for="input1">Cena (zł)</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea type="text" name="opis" class="form-control" id="input1" placeholder="Opis">{{ $product->opis }}</textarea>
-                            <label for="input1">Opis</label>
+                            <textarea type="text" style="height: 7rem; resize: none;" maxlength="200" name="opis" class="form-control" id="input1" placeholder="Opis">{{ $product->opis }}</textarea>
+                            <label for="input1">Opis (limit znaków: 200)</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" name="plec" class="form-control" id="input1" placeholder="Płeć" value="{{ $product->plec }}">

@@ -4,7 +4,7 @@
         <div class="container-fluid ml-lg-0">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8">
-                    <a href="{{ asset('products') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
+                    <a href="{{ asset('/') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
                     <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" class="img-fluid rounded"  style="width: 100%; height: auto;" alt="{{ $product->nazwa }}">
               
                   </div>

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('content')
 <main class="py-4" id="main">
     <section class="inner-page">
         <div class="container">
@@ -132,5 +133,5 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{ asset('js/admin_edit.js') }}"></script>
 {{-- <script src="./js/admin_edit.js"></script> --}}
-@section('content')
+
 @endsection

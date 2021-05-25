@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('content')
 <main class="py-4" id="main">
     <section class="inner-page">
         <div class="container">
@@ -44,5 +45,5 @@
         </div>
     </section>
 </main>
-@section('content')
+
 @endsection

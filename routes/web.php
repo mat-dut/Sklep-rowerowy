@@ -36,8 +36,12 @@ Route::get('remove_product/{product_id}', [ProductController::class, 'remove'])-
 
 // KONIEC FUNKCJI ADMINISTRATORA
 
+//PRODUKTY
 Route::get('/', [ProductController::class, 'index'])->name('main');
 Route::post('/', [ProductController::class, 'index']);
+Route::get('search/{search_query}', [ProductController::class, 'search']);
+Route::get('search', [ProductController::class, 'search']);
+Route::post('search', [ProductController::class, 'search']);
 Route::get('product/{product_id}', [ProductController::class, 'show'])->name('product');
 
 //NAVBAR

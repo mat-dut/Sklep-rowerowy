@@ -3,12 +3,33 @@
 <main class="py-4" id="main">
     <section class="inner-page">
         <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-3 col-lg-3"></div>
+                <div class="col-md-6 col-lg-6">
+                    <form action="../search" method="post">
+                        @csrf
+                        <div class="input-group mb-3 mt-3 align-self-center">
+                            <input type="text" class="form-control" name="searchInput" list="datalistOptions" placeholder="Szukaj..." aria-label="Szukaj..." aria-describedby="searchBtn">
+                            <datalist id="datalistOptions">
+
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->nazwa }}">
+                                @endforeach
+                                
+                            </datalist>
+                            <button class="btn btn-outline-dark" list="datalistOptions" type="submit" id="searchBtn">Szukaj</button>
+                            
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-lg-3"></div>
+            </div>
             <div class="row">
                 <div class="col-md-7 col-lg-5">
-                    <form method="post">
+                    <form action='..' method="post">
                         @csrf
                         <div class="d-flex">
-                            <select class="form-select mb-3" name="kategoria" aria-label="Kategoria">
+                            <select class="form-select mb-3" name="kategoria" id="kategoria" aria-label="Kategoria">
                                 <option selected>Wszystkie</option>
                                 @if(session('category') !== null)
                                 <option selected value="{{ session('category') }}">{{ session('category') }}</option>
@@ -27,9 +48,9 @@
                 </div>
                 <div class="col-md-5 col-lg-7"></div>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-sm-center justify-content-xl-start">
                 @foreach ($products as $product)  
-                    <div class="col-md-5 col-lg-4">
+                    <div class="col-md-6 col-lg-5 col-xl-4 col-sm-10">
                         <div class="card h-100">
                             <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" class="card-img-top" style="width: 100%; height: 240px;" alt="{{ $product->nazwa }}">
                             <div class="card-body">

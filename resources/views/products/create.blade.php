@@ -28,7 +28,7 @@
                             <option value="Rowery szosowe">Rowery szosowe</option>
                           </select>
                           <div class="form-floating mb-3">
-                            <input type="text" name="cena" class="form-control" id="input1" placeholder="Cena">
+                            <input type="number" name="cena" class="form-control" id="input1" placeholder="Cena">
                             <label for="input1">Cena</label>
                         </div>
                         <div class="form-floating mb-3">

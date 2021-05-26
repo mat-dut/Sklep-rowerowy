@@ -125,4 +125,19 @@ class ProductController extends Controller
 
         return redirect('products_table');
     }
+
+    public function search(Request $request, $search_query=''){
+        if($request->method()=='GET'){
+            if($search_query !== ''){
+                $products = Product::whereRaw("upper(nazwa) like upper('%$search_query%')")->get();
+                return view('products.products',[
+                    'products' => $products
+                ]);
+            }else{
+                return redirect('/');
+            }
+        }elseif($request->method()=='POST'){
+            return redirect("search/$request->searchInput");
+        }
+    }
 }

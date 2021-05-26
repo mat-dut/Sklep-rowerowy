@@ -139,9 +139,9 @@
 
     <div class="container d-md-flex py-4">
 
-      <div class="me-md-auto text-md-">
+      <div class="me-md-auto">
         <div class="copyright">
-          &copy; Copyright <strong><span>OnePage</span></strong>. All Rights Reserved
+          &copy; <strong><span>SklepRowerowy</span></strong> Wszelkie prawa zastrzeżone
         </div>
         {{-- <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -162,10 +162,8 @@
     </div>
     </footer><!-- End Footer -->
 
-    <div id="preloader"></div>
+    <div id="preloader">
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
     </div>
 </body>

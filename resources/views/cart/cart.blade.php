@@ -37,8 +37,8 @@
                                 <td class="text-nowrap">Całość: <span class="text-success">{{ number_format($calosc, 0, '.', ' ') }} zł</span></td>
                         </tbody>
                     </table>
-                    <a class="card-text d-flex justify-content-start" href="{{ asset('make_order') }}"><button type="button" class="btn btn-info text-white">Zrealizuj zamówienie</button></a>
-                    <a class="card-text d-flex justify-content-end" href="{{ asset('clear_cart') }}"><button type="button" class="btn btn-danger">Wyczyść koszyk</button></a>
+                    <div><a class="card-text" href="{{ asset('clear_cart') }}"><button type="button" class="btn btn-danger">Wyczyść koszyk</button></a></div>
+                    <div class="mt-4"><a class="card-text" href="{{ asset('make_order') }}"><button type="button" class="btn btn-info text-white">Zrealizuj zamówienie</button></a></div>
                     @else
                         <h3 class="card-text">Brak produktów w koszyku! <a href="{{ asset('/') }}">Zamów coś tutaj.</a></h3>
                     @endif

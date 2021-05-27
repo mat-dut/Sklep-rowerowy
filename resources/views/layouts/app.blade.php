@@ -75,7 +75,7 @@
                                 </div>
                             </li>
                         @endguest
-                        <li class="justify-content-end"><a class="nav-link" href="{{ asset('cart') }}"><img class="img-fluid" height="48" width="48" src="{{ asset('assets/img/cart_img.png') }}">Koszyk<h5><span class="badge bg-success ml-1">@if (session('cart') !== null) {{ count(session('cart')) }} @else 0 @endif</span></h5></a></li>
+                        <li class="justify-content-end"><a class="nav-link" href="{{ asset('cart') }}"><img class="img-fluid" height="48" width="48" src="{{ asset('assets/img/cart_img.png') }}">Koszyk<h5><span id="cart_items" class="badge bg-success ml-1">@if (session('cart') !== null) {{ count(session('cart')) }} @else 0 @endif</span></h5></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
               </nav><!-- .navbar -->
@@ -143,22 +143,15 @@
         <div class="copyright">
           &copy; <strong><span>SklepRowerowy</span></strong> Wszelkie prawa zastrzeżone
         </div>
-        {{-- <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-        </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div> --}}
-        </div>
+      </div>
+      <div class="justify-content-end">
+        <a href="#" style="text-decoration: none; color: #4267B2;"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a>
+        <a href="#" style="text-decoration: none; color: #C13584;"><i class="bi bi-instagram ml-2" style="font-size: 1.5rem;"></i></a>
+        <a href="#" style="text-decoration: none; color: #FF0000;"><i class="bi bi-youtube ml-2" style="font-size: 1.5rem;"></i></a>
+        <a href="#" style="text-decoration: none; color: #1DA1F2;"><i class="bi bi-twitter ml-2" style="font-size: 1.5rem;"></i></a>
+        <a href="#" style="text-decoration: none; color: #7289da;"><i class="bi bi-discord ml-2" style="font-size: 1.5rem;"></i></a>
+        <a href="#" style="text-decoration: none; color: #0072b1;"><i class="bi bi-linkedin ml-2" style="font-size: 1.5rem;"></i></a>
+      </div>
     </div>
     </footer><!-- End Footer -->
 

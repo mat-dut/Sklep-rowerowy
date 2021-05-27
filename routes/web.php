@@ -57,6 +57,7 @@ Route::get('remove_from_cart/{product_id}', [CartController::class, 'remove']);
 
 //FUNKCJE ZAMAWIANIA
 Route::get('make_order', [OrderController::class, 'index'])->name('make_order');
+Route::post('make_order', [OrderController::class, 'create']);
 //KONIEC FUNKCJI ZAMAWIANIA
 
 //Pinging

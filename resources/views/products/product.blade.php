@@ -1,13 +1,28 @@
 @extends('layouts.app')
+@section('content')
 <main class="py-4 mt-5" id="main">
     <section class="inner-page" style="padding: 60px 0;">
         <div class="container-fluid ml-lg-0">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8">
                     <a href="{{ asset('/') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
-                    <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" class="img-fluid rounded"  style="width: 100%; height: auto;" alt="{{ $product->nazwa }}">
-              
-                  </div>
+                    <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" style="cursor: pointer; width: 100%; height: auto; object-fit: cover;" data-toggle="modal" data-target="#exampleModalPreview" class="img-fluid rounded" alt="{{ $product->nazwa }}">
+                </div>
+                <div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+                    <div class="modal-dialog-full-width modal-dialog momodel modal-fluid" role="document">
+                        <div class="modal-content-full-width modal-content ">
+                            <div class=" modal-header-full-width   modal-header text-center">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span style="font-size: 1.3em;" aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" style="cursor: pointer;" class="img-fluid rounded"  style="width: 100%; height: auto;" alt="{{ $product->nazwa }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-sm-0 col-md-0 col-lg-5 col-xl-4">
                     <div class="card w-100 float-lg-right mx-auto">
                         <div class="card-body">
@@ -125,5 +140,4 @@
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="{{ asset("js/cart.js") }}"></script>
-@section('content')
 @endsection

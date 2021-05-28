@@ -51,15 +51,17 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-sm-center justify-content-xl-start">
                 @foreach ($products as $product)  
                     <div class="col-md-6 col-lg-5 col-xl-4 col-sm-10">
-                        <div class="card h-100">
-                            <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" class="card-img-top" style="width: 100%; height: 240px;" alt="{{ $product->nazwa }}">
-                            <div class="card-body">
-                                <h6 class="text-muted">{{ $product->kategoria }}</h6>
-                                <h4 class="card-title">{{ $product->nazwa }}</h4>
-                                <h5 class="text-success mb-3">{{ number_format($product->cena, 0, '.', ' ') }} zł</h5>
-                                <p class="card-text"><a href="{{ route('product', $product->id) }}"><button class="btn btn-info">Przejdź</button></a></p>
+                        <a href="{{ route('product', $product->id) }}" style="text-decoration: none; color: black;">
+                            <div class="card h-100">
+                                <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" class="card-img-top" style="width: 100%; height: 240px;" alt="{{ $product->nazwa }}">
+                                <div class="card-body">
+                                    <h6 class="text-muted">{{ $product->kategoria }}</h6>
+                                    <h4 class="card-title">{{ $product->nazwa }}</h4>
+                                    <h5 class="text-success mb-3">{{ number_format($product->cena, 0, '.', ' ') }} zł</h5>
+                                    
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>

@@ -4,11 +4,12 @@ use App\Http\Controllers\ElementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Middleware\VerifyIfAdmin;
-
+use App\Mail\OrderMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +59,7 @@ Route::get('remove_from_cart/{product_id}', [CartController::class, 'remove']);
 //FUNKCJE ZAMAWIANIA
 Route::get('make_order', [OrderController::class, 'index'])->name('make_order');
 Route::post('make_order', [OrderController::class, 'create']);
+Route::get('orders', [OrderController::class, 'see_orders'])->middleware('auth')->name('see_orders');
 //KONIEC FUNKCJI ZAMAWIANIA
 
 //Pinging

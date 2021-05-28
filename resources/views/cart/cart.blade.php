@@ -29,7 +29,7 @@
                                 <td class="text-nowrap"><span class="text-success">{{ number_format($product->cena, 0, '.', ' ') }} zł</span></td>
                                 <td>{{ $id[1] }}</td>
                                 <td><a href="{{ asset("remove_from_cart/$product->id") }}"><button class="btn btn-danger">Usuń</button></a></td>
-                                <?php $calosc += (float)$product->cena*$id[1] ?>
+                                <?php $calosc += (int)$product->cena*$id[1] ?>
                             </tr>
                             @endif
                             @endforeach

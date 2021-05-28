@@ -42,28 +42,28 @@
                     <form method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Imię</label>
+                            <label>Imię</label>
                             <input type="text" name="imie" class="form-control" placeholder="Imię" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Nazwisko</label>
+                            <label>Nazwisko</label>
                             <input type="text" name="nazwisko" class="form-control" placeholder="Nazwisko" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Adres email</label>
+                            <label>Adres email</label>
                             @if (Auth::user() !== null)
-                                <input type="email" name="email" class="form-control" value="{{ Auth::user()->email }}" disabled required>
+                                <input type="email" name="email" class="form-control" value="{{ Auth::user()->email }}" readonly required>
                             @else
                                 <input type="email" name="email" class="form-control" placeholder="Adres e-mail" value="" required>
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Numer telefonu</label>
+                            <label>Numer telefonu</label>
                             <input type="tel"  name="numer_telefonu" class="form-control" pattern="[0-9]{9}" placeholder="123456789" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Adres dostawy</label>
+                            <label>Adres dostawy</label>
                             <input type="text" name="adres_dostawy" class="form-control" placeholder="Adres dostawy" required>
                         </div>  
                         <input type="hidden" name="produkty" value="{{ json_encode(session('cart')) }}">    

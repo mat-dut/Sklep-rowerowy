@@ -45,6 +45,7 @@
                                 @endif
                             </div>
                             <p class="card-text"><b>Status zamówienia: </b>W toku</p>
+                            <p class="card-text">Na podany adres e-mail zostało wysłane potwierdzenie zamówienia. Jeśli masz konto w naszym serwisie, zobacz status zamówienia <a href="{{ asset('orders') }}">tutaj</a>.</p>
                         </div>
                     </div>
                 </div>

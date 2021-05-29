@@ -74,62 +74,62 @@
                     <div class="card mt-3">
                         <h5 class="card-header">INFORMACJE</h5>
                         <div class="card-body">
-                          <p class="card-text"><b>Marka: </b>{{ $product->marka }}</p>
-                          <p class="card-text"><b>Płeć: </b>{{ $product->plec }}</p>
-                          <p class="card-text"><b>Kolor: </b>{{ $product->kolor }}</p>
+                          <p class="card-text"><b>Marka: </b>{{ $product->marka ?? "---" }}</p>
+                          <p class="card-text"><b>Płeć: </b>{{ $product->plec ?? "---" }}</p>
+                          <p class="card-text"><b>Kolor: </b>{{ $product->kolor ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">
                         <h5 class="card-header">RAMA</h5>
                         <div class="card-body">
-                          <p class="card-text"><b>Rozmiar ramy: </b>{{ $product->rozmiar_ramy }}</p>
-                          <p class="card-text"><b>Materiał ramy: </b>{{ $product->material_ramy }}</p>
-                          <p class="card-text"><b>Widelec: </b>{{ $product->widelec }}</p>
+                          <p class="card-text"><b>Rozmiar ramy: </b>{{ $product->rozmiar_ramy ?? "---" }}</p>
+                          <p class="card-text"><b>Materiał ramy: </b>{{ $product->material_ramy ?? "---" }}</p>
+                          <p class="card-text"><b>Widelec: </b>{{ $product->widelec ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">
                         <h5 class="card-header">NAPĘD</h5>
                         <div class="card-body">
-                          <p class="card-text"><b>Napęd: </b>{{ $product->naped }}</p>
-                          <p class="card-text"><b>Przerzutka przednia: </b>{{ $product->przerzutka_przednia }}</p>
-                          <p class="card-text"><b>Przerzutka tylna: </b>{{ $product->przerzutka_tylna }}</p>
-                          <p class="card-text"><b>Manetki: </b>{{ $product->manetki }}</p>
-                          <p class="card-text"><b>Mechanizm korbowy: </b>{{ $product->mechanizm_korbowy }}</p>
-                          <p class="card-text"><b>Kaseta/wolnobieg: </b>{{ $product->kaseta }}</p>
+                          <p class="card-text"><b>Napęd: </b>{{ $product->naped ?? "---" }}</p>
+                          <p class="card-text"><b>Przerzutka przednia: </b>{{ $product->przerzutka_przednia ?? "---" }}</p>
+                          <p class="card-text"><b>Przerzutka tylna: </b>{{ $product->przerzutka_tylna ?? "---" }}</p>
+                          <p class="card-text"><b>Manetki: </b>{{ $product->manetki ?? "---" }}</p>
+                          <p class="card-text"><b>Mechanizm korbowy: </b>{{ $product->mechanizm_korbowy ?? "---" }}</p>
+                          <p class="card-text"><b>Kaseta/wolnobieg: </b>{{ $product->kaseta ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">
                         <h5 class="card-header">HAMULCE</h5>
                         <div class="card-body">
-                          <p class="card-text"><b>Typ hamulców: </b>{{ $product->typ_hamulcow }}</p>
-                          <p class="card-text"><b>Hamulce: </b>{{ $product->hamulce }}</p>
+                          <p class="card-text"><b>Typ hamulców: </b>{{ $product->typ_hamulcow ?? "---" }}</p>
+                          <p class="card-text"><b>Hamulce: </b>{{ $product->hamulce ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">
                         <h5 class="card-header">KOŁA</h5>
                         <div class="card-body">
-                          <p class="card-text"><b>Rozmiar koła: </b>{{ $product->rozmiar_kola }}</p>
-                          <p class="card-text"><b>Opony: </b>{{ $product->opony }}</p>
+                          <p class="card-text"><b>Rozmiar koła: </b>{{ $product->rozmiar_kola ?? "---" }}</p>
+                          <p class="card-text"><b>Opony: </b>{{ $product->opony ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">
                         <h5 class="card-header">KOMPONENTY</h5>
                         <div class="card-body">
-                          <p class="card-text"><b>Siodło: </b>{{ $product->siodlo }}</p>
-                          <p class="card-text"><b>Pedały: </b>{{ $product->pedaly }}</p>
+                          <p class="card-text"><b>Siodło: </b>{{ $product->siodlo ?? "---" }}</p>
+                          <p class="card-text"><b>Pedały: </b>{{ $product->pedaly ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">
                         <h5 class="card-header">INFORMACJE HANDLOWE</h5>
                         <div class="card-body">
-                          <p class="card-text"><b>Kod produktu: </b>{{ $product->kod_produktu }}</p>
-                          <p class="card-text"><b>Rocznik: </b>{{ $product->rocznik }}</p>
+                          <p class="card-text"><b>Kod produktu: </b>{{ $product->kod_produktu ?? "---" }}</p>
+                          <p class="card-text"><b>Rocznik: </b>{{ $product->rocznik ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">
                         <h5 class="card-header">OPIS</h5>
                         <div class="card-body">
-                          <p class="card-text">{{ $product->opis }}</p>
+                          <p class="card-text">{{ $product->opis ?? "---" }}</p>
                         </div>
                     </div>
                 </div>

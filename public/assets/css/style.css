@@ -300,3 +300,15 @@ section {
 .modal-header-full-width {
     border-bottom: 1px solid #9ea2a2 !important;
 }
+
+.carousel-item{
+    height: 500px;
+}
+
+.carousel_img{
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}

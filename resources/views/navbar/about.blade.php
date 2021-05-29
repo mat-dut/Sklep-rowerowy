@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <h6 class="display-6">Jesteśmy entuzjastami dwóch kółek i o rowerach wiemy wszystko.</h6>
+                    <h1 class="display-4">Jesteśmy entuzjastami dwóch kółek i o rowerach wiemy wszystko.</h1>
                     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -24,7 +24,8 @@
                             <img src="{{ asset('assets/img/bikepic3.jpg') }}" class="d-block w-100" alt="...">
                           </div>
                         </div>
-                      </div>                  
+                      </div>   
+                      <h1 class="display-4 mt-3">Mateusz Dutkiewicz 2F</h1>               
                 </div>
                 <div class="col-md-1"></div>
             </div>

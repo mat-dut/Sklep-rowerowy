@@ -28,8 +28,8 @@
                             <option value="Rowery szosowe">Rowery szosowe</option>
                           </select>
                           <div class="form-floating mb-3">
-                            <input type="number" name="cena" class="form-control" id="input1" placeholder="Cena">
-                            <label for="input1">Cena</label>
+                            <input type="number" name="cena" class="form-control" id="input1" placeholder="Cena (zł)">
+                            <label for="input1">Cena (zł)</label>
                         </div>
                         <div class="form-floating mb-3">
                             <textarea type="text" style="height: 7rem; resize: none;" maxlength="200" name="opis" class="form-control" id="opis" placeholder="Opis"></textarea>

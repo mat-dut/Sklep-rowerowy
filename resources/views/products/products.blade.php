@@ -3,6 +3,45 @@
 <main class="py-4" id="main">
     <section class="inner-page">
         <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="{{ asset('assets/img/bikepic3.jpg') }}" class="d-block w-100 carousel_img" alt="...">
+                            <div class="carousel-caption">
+                                <h3>SklepRowerowy</h3>
+                                <p>Jesteśmy na rynku od 20 lat</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{{ asset('assets/img/bikepic5.jpg') }}" class="d-block w-100 carousel_img" alt="...">
+                            <div class="carousel-caption">
+                                <h3>Pełna satysfakcja</h3>
+                                <p>Znajdziesz u nas to, czego potrzebujesz</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{{ asset('assets/img/bikepic2.jpg') }}" class="d-block w-100 carousel_img" alt="...">
+                            <div class="carousel-caption">
+                                <h3>Szybki czas dostawy</h3>
+                                <p>Wyślemy twój rower już w dniu zamówienia</p>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                    </div>
+                </div>
+                <div class="col-md-10"></div>
+            </div>
             <div class="row mb-5">
                 <div class="col-md-3 col-lg-3"></div>
                 <div class="col-md-6 col-lg-6">

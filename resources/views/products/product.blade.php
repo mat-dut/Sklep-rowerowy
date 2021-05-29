@@ -129,6 +129,7 @@
                         <div class="card-body">
                           <p class="card-text"><b>Kod produktu: </b>{{ $product->kod_produktu ?? "---" }}</p>
                           <p class="card-text"><b>Rocznik: </b>{{ $product->rocznik ?? "---" }}</p>
+                          <p class="card-text"><b>Waga: </b>{{ $product->waga ?? "---" }}</p>
                         </div>
                     </div>
                     <div class="card mt-1">

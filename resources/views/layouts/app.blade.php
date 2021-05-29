@@ -99,7 +99,6 @@
         <a href="#" style="text-decoration: none; color: #C13584;"><i class="bi bi-instagram ml-2" style="font-size: 1.5rem;"></i></a>
         <a href="#" style="text-decoration: none; color: #FF0000;"><i class="bi bi-youtube ml-2" style="font-size: 1.5rem;"></i></a>
         <a href="#" style="text-decoration: none; color: #1DA1F2;"><i class="bi bi-twitter ml-2" style="font-size: 1.5rem;"></i></a>
-        <a href="#" style="text-decoration: none; color: #7289da;"><i class="bi bi-discord ml-2" style="font-size: 1.5rem;"></i></a>
         <a href="#" style="text-decoration: none; color: #0072b1;"><i class="bi bi-linkedin ml-2" style="font-size: 1.5rem;"></i></a>
       </div>
     </div>

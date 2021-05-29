@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('title')
+<title>Produkty</title>
+@endsection
+@section('content')
 <main class="py-4 mt-3 mb-5" id="main">
     <section class="inner-page" style="overflow: auto;">
         <div class="container"></div>
@@ -158,5 +162,4 @@
     {{ session()->forget('alertNoti') }}
     @endif
 {{-- <script src="./js/admin_edit.js"></script> --}}
-@section('content')
 @endsection

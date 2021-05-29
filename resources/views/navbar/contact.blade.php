@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+<title>Kontakt</title>
+@endsection
+
 @section('content')
 <main class="py-4 mt-5" id="main">
     <section class="inner-page">
@@ -17,8 +22,12 @@
                                 <label for="input1">Nazwisko</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea type="text" style="height: 7rem; resize: none;" maxlength="200" name="opis" class="form-control" id="opis" placeholder="Opis"></textarea>
-                                <label for="input1">Treść <span id="charNum"></span>/200</label>
+                                <input type="text" name="email" class="form-control" id="input1" placeholder="E-mail">
+                                <label for="input1">E-mail</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea type="text" style="height: 7rem; resize: none;" maxlength="500" name="opis" class="form-control" id="opis" placeholder="Opis"></textarea>
+                                <label for="input1">Treść <span id="charNum"></span>/500</label>
                             </div>
                             <button type="submit" class="btn btn-info text-white">Wyślij</button>
                         </form>

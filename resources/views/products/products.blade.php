@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+<title>Strona główna</title>
+@endsection
+
 @section('content')
 <main class="py-4" id="main">
     <section class="inner-page">

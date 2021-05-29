@@ -100,7 +100,8 @@
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Usuń'
+            confirmButtonText: 'Usuń',
+            cancelButtonText: 'Anuluj'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = '{{ asset('remove_product/') }}/' + $(this).data("id");

@@ -37,7 +37,7 @@
                                         <tr>
                                             <th scope="row">{{ $loop->index+1 }}</th>
                                             <td><img class="img-fluid" height="64" width="64" src="{{ Storage::disk('google')->url($product->zdjecie) }}"></td>
-                                            <td><a href="{{ asset("product/$product->id") }}">{{ $product->nazwa }}</a></td>
+                                            <td><a href="{{ route("product", $product->id) }}">{{ $product->nazwa }}</a></td>
                                             <td class="text-nowrap"><span class="text-success">{{ number_format($product->cena, 0, '.', ' ') }} zł</span></td>
                                             <td>{{ $id[1] }}</td>
                                         </tr>
@@ -50,7 +50,7 @@
                                 @endif
                             </div>
                             <p class="card-text"><b>Status zamówienia: </b>W toku</p>
-                            <p class="card-text">Na podany adres e-mail zostało wysłane potwierdzenie zamówienia. Jeśli masz konto w naszym serwisie, zobacz status zamówienia <a href="{{ asset('orders') }}">tutaj</a>.</p>
+                            <p class="card-text">Na podany adres e-mail zostało wysłane potwierdzenie zamówienia. Jeśli masz konto w naszym serwisie, zobacz status zamówienia <a href="{{ route('see_orders') }}">tutaj</a>.</p>
                         </div>
                     </div>
                 </div>

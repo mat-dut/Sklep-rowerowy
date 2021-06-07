@@ -10,7 +10,7 @@
         <div class="container-fluid ml-lg-0">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8">
-                    <a href="{{ asset('/') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
+                    <a href="{{ route('main') }}"><button class="btn btn-outline-dark position-absolute ml-2 mt-2">Powrót</button></a>
                     <img src="{{ Storage::disk('google')->url($product->zdjecie) }}" style="cursor: pointer; width: 100%; height: auto; object-fit: cover;" data-toggle="modal" data-target="#exampleModalPreview" class="img-fluid rounded" alt="{{ $product->nazwa }}">
                 </div>
                 <div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
@@ -43,7 +43,7 @@
                                     <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                 <?php endfor; ?>
                           </select>
-                          <button class="btn btn-primary btn-lg d-flex justify-content-center" id="button_add" data-bs-toggle="offcanvas" data-url="{{ asset("add_to_cart") }}" data-id="{{ $product->id }}" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Dodaj do koszyka</button>
+                          <button class="btn btn-primary btn-lg d-flex justify-content-center" id="button_add" data-bs-toggle="offcanvas" data-url="{{ route("add_to_cart") }}" data-id="{{ $product->id }}" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Dodaj do koszyka</button>
 
                             <div class="offcanvas offcanvas-end" style="width: 500px;" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                             <div class="offcanvas-header">
@@ -63,7 +63,7 @@
                                             </tbody>                                                                              
                                         </table>
                                     </div>
-                                    <div class="mt-3"><a href="{{ asset('cart') }}" class="card-link"><button class="btn btn-primary">Przejdź do koszyka</button></a></div>
+                                    <div class="mt-3"><a href="{{ route('cart') }}" class="card-link"><button class="btn btn-primary">Przejdź do koszyka</button></a></div>
                                     <div class="mt-3"><button class="btn btn-primary" data-bs-dismiss="offcanvas" aria-label="Close">Kontynuuj zakupy</button></div>
                                     
                             </div>

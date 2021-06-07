@@ -48,7 +48,7 @@
                                     {{-- <th scope="row">{{ $loop->index }}</th> --}}
                                     <td>{{ $product->id }}</td>
                                     <td>{{ $product->marka }}</td>
-                                    <td class="text-nowrap"><a href="{{ asset("product/$product->id") }}">{{ $product->nazwa }}</a></td>
+                                    <td class="text-nowrap"><a href="{{ route("product", $product->id) }}">{{ $product->nazwa }}</a></td>
                                     <td>{{ $product->kategoria }}</td> 
                                     <td class="text-nowrap">{{ number_format($product->cena, 0, '.', ' ') }} zł</td>
                                     <td>{{ $product->opis }}</td>
@@ -104,7 +104,7 @@
             cancelButtonText: 'Anuluj'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = '{{ asset('remove_product/') }}/' + $(this).data("id");
+                    window.location.href = `http://localhost/Sklep_rowerowy/remove_product/${$(this).data("id")}`;
                     let timerInterval
         Swal.fire({
             icon: 'info',

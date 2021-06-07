@@ -41,7 +41,7 @@ Route::get('remove_product/{product_id}', [ProductController::class, 'remove'])-
 Route::get('/', [ProductController::class, 'index'])->name('main');
 Route::post('/', [ProductController::class, 'index']);
 Route::get('search/{search_query}', [ProductController::class, 'search']);
-Route::get('search', [ProductController::class, 'search']);
+Route::get('search', [ProductController::class, 'search'])->name('search');
 Route::post('search', [ProductController::class, 'search']);
 Route::get('product/{product_id}', [ProductController::class, 'show'])->name('product');
 
@@ -52,8 +52,8 @@ Route::get('/kontakt', [NavbarController::class, 'contact'])->name('contact');
 //FUNKCJE KOSZYKA
 Route::post('add_to_cart', [CartController::class, 'add'])->name('add_to_cart');
 Route::get('cart', [CartController::class, 'index'])->name('cart');
-Route::get('clear_cart', [CartController::class, 'destroy']);
-Route::get('remove_from_cart/{product_id}', [CartController::class, 'remove']);
+Route::get('clear_cart', [CartController::class, 'destroy'])->name('clear_cart');
+Route::get('remove_from_cart/{product_id}', [CartController::class, 'remove'])->name('remove_from_cart');
 //KONIEC FUNKCJI KOSZYKA
 
 //FUNKCJE ZAMAWIANIA

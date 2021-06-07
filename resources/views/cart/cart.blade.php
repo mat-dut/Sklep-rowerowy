@@ -31,10 +31,10 @@
                             <tr>
                                 <th scope="row">{{ $loop->index+1 }}</th>
                                 <td><img class="img-fluid" height="64" width="64" src="{{ Storage::disk('google')->url($product->zdjecie) }}"></td>
-                                <td><a href="{{ asset("product/$product->id") }}">{{ $product->nazwa }}</a></td>
+                                <td><a href="{{ route("product", $product->id) }}">{{ $product->nazwa }}</a></td>
                                 <td class="text-nowrap"><span class="text-success">{{ number_format($product->cena, 0, '.', ' ') }} zł</span></td>
                                 <td>{{ $id[1] }}</td>
-                                <td><a href="{{ asset("remove_from_cart/$product->id") }}"><button class="btn btn-danger">Usuń</button></a></td>
+                                <td><a href="{{ route("remove_from_cart", $product->id) }}"><button class="btn btn-danger">Usuń</button></a></td>
                                 <?php $calosc += (int)$product->cena*$id[1] ?>
                             </tr>
                             @endif
@@ -43,10 +43,10 @@
                                 <td class="text-nowrap">Całość: <span class="text-success">{{ number_format($calosc, 0, '.', ' ') }} zł</span></td>
                         </tbody>
                     </table>
-                    <div><a class="card-text" href="{{ asset('clear_cart') }}"><button type="button" class="btn btn-danger">Wyczyść koszyk</button></a></div>
-                    <div class="mt-4"><a class="card-text" href="{{ asset('make_order') }}"><button type="button" class="btn btn-info text-white">Zrealizuj zamówienie</button></a></div>
+                    <div><a class="card-text" href="{{ route('clear_cart') }}"><button type="button" class="btn btn-danger">Wyczyść koszyk</button></a></div>
+                    <div class="mt-4"><a class="card-text" href="{{ route('make_order') }}"><button type="button" class="btn btn-info text-white">Zrealizuj zamówienie</button></a></div>
                     @else
-                        <h3 class="card-text">Brak produktów w koszyku! <a href="{{ asset('/') }}">Zamów coś tutaj.</a></h3>
+                        <h3 class="card-text">Brak produktów w koszyku! <a href="{{ route('main') }}">Zamów coś tutaj.</a></h3>
                     @endif
                 </div>
                 <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>

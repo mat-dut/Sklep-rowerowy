@@ -75,7 +75,7 @@
                                 </div>
                             </li>
                         @endguest
-                        <li class="justify-content-end"><a class="nav-link" href="{{ asset('cart') }}"><img class="img-fluid" height="48" width="48" src="{{ asset('assets/img/cart_img.png') }}">Koszyk<h5><span id="cart_items" class="badge bg-success ml-1">@if (session('cart') !== null) {{ count(session('cart')) }} @else 0 @endif</span></h5></a></li>
+                        <li class="justify-content-end"><a class="nav-link" href="{{ route('cart') }}"><img class="img-fluid" height="48" width="48" src="{{ asset('assets/img/cart_img.png') }}">Koszyk<h5><span id="cart_items" class="badge bg-success ml-1">@if (session('cart') !== null) {{ count(session('cart')) }} @else 0 @endif</span></h5></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
               </nav><!-- .navbar -->

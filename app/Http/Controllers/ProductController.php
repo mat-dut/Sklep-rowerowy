@@ -19,7 +19,8 @@ class ProductController extends Controller
                 $products = Product::select('*')->orderBy('id', 'asc')->get();
             }
             return view('products.products', [
-                'products' => $products
+                'products' => $products,
+                'url' => ''
             ]);
 
         }elseif($request->method() == 'POST'){
@@ -33,7 +34,8 @@ class ProductController extends Controller
                 $products = Product::where('kategoria', $request->kategoria)->orderBy('id', 'asc')->get();
 
                 return view('products.products', [
-                    'products' => $products
+                    'products' => $products,
+                    'url' => route('search').'/'.$request->kategoria
                 ]);
             }
         }

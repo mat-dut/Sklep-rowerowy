@@ -31,7 +31,7 @@
                                 <tr>
                                     <th scope="row">{{ $loop->index+1 }}</th>
                                     <td><img class="img-fluid" height="64" width="64" src="{{ Storage::disk('google')->url($product->zdjecie) }}"></td>
-                                    <td><a href="{{ asset("product/$product->id") }}">{{ $product->nazwa }}</a></td>
+                                    <td><a href="{{ route("product", $product->id) }}">{{ $product->nazwa }}</a></td>
                                     <td class="text-nowrap"><span class="text-success">{{ number_format($product->cena, 0, '.', ' ') }} zł</span></td>
                                     <td>{{ $id[1] }}</td>
                                     <?php $calosc += (float)$product->cena*$id[1] ?>

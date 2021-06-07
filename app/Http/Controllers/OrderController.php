@@ -25,7 +25,7 @@ class OrderController extends Controller
         $order = new Order($request->all());
         $order->zrealizowane = false;
 
-        Mail::to($request->email)->send(new OrderMail(asset('orders')));
+        Mail::to($request->email)->send(new OrderMail(route('see_orders')));
         $order->save();
 
         $products = Product::select('*')->orderBy('id', 'asc')->get();  

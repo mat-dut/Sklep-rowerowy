@@ -50,10 +50,10 @@
             <div class="row mb-5">
                 <div class="col-md-3 col-lg-3"></div>
                 <div class="col-md-6 col-lg-6">
-                    <form action="../search" method="post">
+                    <form action="{{ route('search') }}" method="post">
                         @csrf
                         <div class="input-group mb-3 mt-3 align-self-center">
-                            <input type="text" class="form-control" name="searchInput" list="datalistOptions" placeholder="Szukaj..." aria-label="Szukaj..." aria-describedby="searchBtn">
+                            <input type="text" class="form-control" name="searchInput" list="datalistOptions" placeholder="Szukaj..." aria-label="Szukaj..." aria-describedby="searchBtn" required>
                             <datalist id="datalistOptions">
 
                                 @foreach ($products as $product)
@@ -70,7 +70,9 @@
             </div>
             <div class="row">
                 <div class="col-md-7 col-lg-5">
-                    <form action='..' method="post">
+                    @if (isset($url))
+                    @if(URL::current() != $url)
+                    <form method="post">
                         @csrf
                         <div class="d-flex">
                             <select class="form-select mb-3" name="kategoria" id="kategoria" aria-label="Kategoria">
@@ -89,6 +91,8 @@
                             <button class="btn btn-success align-self-start ml-3" type="submit">Wyświetl</button>
                         </div>
                     </form>
+                    @endif
+                    @endif
                 </div>
                 <div class="col-md-5 col-lg-7"></div>
             </div>

@@ -43,14 +43,19 @@ class OrderController extends Controller
 
     public function see_orders(){
         if(Auth::user() !== null){
-            $orders = Order::where('email', Auth::user()->email)->orderBy('created_at', 'desc')->get();
+            if(Auth::user()->admin){
+                $orders = Order::select('*')->orderBy('created_at', 'desc')->get();
+            }else{
+                $orders = Order::where('email', Auth::user()->email)->orderBy('created_at', 'desc')->get();
+            }
             $products = Product::select('*')->orderBy('id', 'asc')->get(); 
 
             return view('order.see_orders', [
                 'orders' => $orders,
                 'products' => $products
             ]);
-        }else{
+        }
+        else{
             return redirect('/');
         }
         

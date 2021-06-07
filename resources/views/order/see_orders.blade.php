@@ -22,6 +22,7 @@
                                 <p class="card-text"><b>E-mail: </b>{{ $order->email }}</p>
                                 <p class="card-text"><b>Numer telefonu: </b>{{ $order->numer_telefonu }}</p>
                                 <p class="card-text"><b>Adres dostawy: </b>{{ $order->adres_dostawy }}</p>
+                                <p class="card-text"><b>Data złożenia zamówienia: </b>{{ $order->created_at }}</p>
                                 <div>
                                     
                                     <table class="table text-nowrap-lg text-nowrap-xl text-nowrap-xxl">

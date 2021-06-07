@@ -3,9 +3,9 @@
 <title>Produkty</title>
 @endsection
 @section('content')
-<main class="py-4 mt-3 mb-5" id="main">
-    <section class="inner-page" style="overflow: auto;">
-        <div class="container"></div>
+<main class="py-5 mt-3 mb-5" id="main">
+    <section class="inner-page" style="overflow: auto; padding-bottom: 0 !important;">
+        <div class="container m-0">
             <div class="row">
                 <div class="col-1 col-md-1"></div>
                     <div class="col-10 col-md-5">

@@ -104,7 +104,7 @@
             cancelButtonText: 'Anuluj'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = `http://localhost/Sklep_rowerowy/remove_product/${$(this).data("id")}`;
+                    window.location.href = `http://sklep-rowerowy.herokuapp.com/remove_product/${$(this).data("id")}`;
                     let timerInterval
         Swal.fire({
             icon: 'info',
